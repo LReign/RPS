@@ -55,25 +55,27 @@ class ViewController: UIViewController {
             //sign = "🤖", make Play Again Button Hidden, Enable & Show all Player Sign Buttons
         case .start:
             appSign.text = "🤖"
+            gameStatus.text = "Rock, Scissors, or Paper?"
             playAgain.isHidden = true
             enableShowSigns()
             self.view.backgroundColor = UIColor.gray
             //break
         case .lose:
-            appSign.text = currState.gameStateText()
+            gameStatus.text = currState.gameStateText()
             self.view.backgroundColor = UIColor.red
             //break
         case .win:
-            appSign.text = currState.gameStateText()
+            gameStatus.text = currState.gameStateText()
             //not Green due to Red/Green Colorblindness
             self.view.backgroundColor = UIColor.blue
             //break
         case .draw:
-            appSign.text = currState.gameStateText()
+            gameStatus.text = currState.gameStateText()
             self.view.backgroundColor = UIColor.brown
             //break
         }
         
+        //if-else implementation
 //        if currState == .start {
 //            appSign.text = "🤖"
 //            playAgain.isHidden = true
